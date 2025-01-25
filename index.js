@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const { connectToDb } = require('./src/config/db')
 const userRoutes = require('./src/modules/user/user.route')
 const postRoutes = require('./src/modules/post/post.route')
-// const commentRoutes = require('./src/modules/comment/comment.route')
 
 const app = express()
 
@@ -11,7 +10,6 @@ app.use(bodyParser.urlencoded())
 app.use(bodyParser.json())
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postRoutes)
-// app.use('/api/comments', commentRoutes)
 
 app.get('/', (req, res) => {
   res.json({
